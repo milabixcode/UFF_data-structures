@@ -1,0 +1,15 @@
+1. Criar um vetor memoria de tamanho x, onde x é o tamanho da memoria
+2. Criar um vetor reservatorio de tamanho x
+3. Ler x registros do arquivo para a memoria 
+    Enquanto ainda tem elemento no arquivo: 
+            Criar uma partição de saída
+            Pegar o registro r de menor chave e gravar na partição de saida
+            Substituir no array de memoria o registro r pelo proximo registro do arquivo de entrada
+            Criar um contador para a quantidade de elementos que tem no vetor
+                    Se ele for menor que o ultimo numero, coloca no reservatório e 
+                    Substituir, no array de memoria, o registro r pelo proximo registro do 
+                    arquivo de entrada
+                Fechar a partição de saida
+                Copiar os registros do reservatorio para o array de memoria
+                Esvaziar o reservatorio
+                Abrir nova partição de saida
