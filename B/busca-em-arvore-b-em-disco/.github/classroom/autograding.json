@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Case 1",
+      "setup": "gcc -o executable arvore_b_mais.c",
+      "run": "(echo  \"import sys, struct\\nwith open('cases_data.bin', 'rb') as case_file:\\n    case_files_sizes = [struct.unpack('i', case_file.read(4))[0] for i in range(15)]\\n    case_files = [case_file.read(case_files_sizes[i]) for i in range(15)]\\nfor fn, name in enumerate(('clientes.dat', 'indice.dat', 'metadados.dat')):\\n    with open(name, 'wb') as save_file:\\n        save_file.write(case_files[int(sys.argv[1]) * 3 + fn])\" > unpack_case_files.py) && python3 unpack_case_files.py 0 && ./executable",
+      "input": "21",
+      "output": "NO FOLHA: (m = 2, pt pai = -1, pt prox = -1)\r\n\t10, Joao\r\n\t13, Ana Maria\r\n\t\t\r\nRESULTADO DA BUSCA: 0",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "Case 2",
+      "setup": "gcc -o executable arvore_b_mais.c",
+      "run": "(echo \"import sys, struct\\nwith open('cases_data.bin', 'rb') as case_file:\\n    case_files_sizes = [struct.unpack('i', case_file.read(4))[0] for i in range(15)]\\n    case_files = [case_file.read(case_files_sizes[i]) for i in range(15)]\\nfor fn, name in enumerate(('clientes.dat', 'indice.dat', 'metadados.dat')):\\n    with open(name, 'wb') as save_file:\\n        save_file.write(case_files[int(sys.argv[1]) * 3 + fn])\" > unpack_case_files.py) && python3 unpack_case_files.py 1 && ./executable",
+      "input": "42",
+      "output": "NO INTERNO: (m = 1, pt pai = -1, aponta folha = 0)\r\n\t[48]  37 [96]  -1 [-1]  -1 [-1]  -1  [-1] \r\n\r\nNO INTERNO: (m = 2, pt pai = 0, aponta folha = 1)\r\n\t[1284]  39 [1712]  55 [2140]  -1 [-1]  -1  [-1] \r\n\r\nNO FOLHA: (m = 2, pt pai = 96, pt prox = 2140)\r\n\t39, Mario\r\n\t50, Ricardo\r\n\t\t\r\nRESULTADO DA BUSCA: 1712",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "Case 3",
+      "setup": "gcc -o executable arvore_b_mais.c",
+      "run": "(echo \"import sys, struct\\nwith open('cases_data.bin', 'rb') as case_file:\\n    case_files_sizes = [struct.unpack('i', case_file.read(4))[0] for i in range(15)]\\n    case_files = [case_file.read(case_files_sizes[i]) for i in range(15)]\\nfor fn, name in enumerate(('clientes.dat', 'indice.dat', 'metadados.dat')):\\n    with open(name, 'wb') as save_file:\\n        save_file.write(case_files[int(sys.argv[1]) * 3 + fn])\" > unpack_case_files.py) && python3 unpack_case_files.py 2 && ./executable",
+      "input": "21",
+      "output": "NO INTERNO: (m = 2, pt pai = -1, aponta folha = 1)\r\n\t[0]  15 [428]  25 [856]  -1 [-1]  -1  [-1] \r\n\r\nNO FOLHA: (m = 4, pt pai = 0, pt prox = 856)\r\n\t15, Jose\r\n\t20, Mariana\r\n\t21, Bruna\r\n\t23, Bruno\r\n\r\nRESULTADO DA BUSCA: 428",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "Case 4",
+      "setup": "gcc -o executable arvore_b_mais.c",
+      "run": "(echo \"import sys, struct\\nwith open('cases_data.bin', 'rb') as case_file:\\n    case_files_sizes = [struct.unpack('i', case_file.read(4))[0] for i in range(15)]\\n    case_files = [case_file.read(case_files_sizes[i]) for i in range(15)]\\nfor fn, name in enumerate(('clientes.dat', 'indice.dat', 'metadados.dat')):\\n    with open(name, 'wb') as save_file:\\n        save_file.write(case_files[int(sys.argv[1]) * 3 + fn])\" > unpack_case_files.py) && python3 unpack_case_files.py 3 && ./executable",
+      "input": "50",
+      "output": "NO INTERNO: (m = 4, pt pai = -1, aponta folha = 1)\r\n\t[0]  15 [428]  25 [856]  40 [1284]  70  [1712] \r\n\r\nNO FOLHA: (m = 2, pt pai = 0, pt prox = 1712)\r\n\t40, Aline\r\n\t45, Juca\r\n\t\t\r\nRESULTADO DA BUSCA: 1284",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "Case 5",
+      "setup": "gcc -o executable arvore_b_mais.c",
+      "run": "(echo \"import sys, struct\\nwith open('cases_data.bin', 'rb') as case_file:\\n    case_files_sizes = [struct.unpack('i', case_file.read(4))[0] for i in range(15)]\\n    case_files = [case_file.read(case_files_sizes[i]) for i in range(15)]\\nfor fn, name in enumerate(('clientes.dat', 'indice.dat', 'metadados.dat')):\\n    with open(name, 'wb') as save_file:\\n        save_file.write(case_files[int(sys.argv[1]) * 3 + fn])\" > unpack_case_files.py) && python3 unpack_case_files.py 4 && ./executable",
+      "input": "34",
+      "output": "NO INTERNO: (m = 1, pt pai = -1, aponta folha = 0)\r\n\t[48]  37 [96]  -1 [-1]  -1 [-1]  -1  [-1] \r\n\r\nNO INTERNO: (m = 2, pt pai = 0, aponta folha = 1)\r\n\t[0]  15 [428]  25 [856]  -1 [-1]  -1  [-1] \r\n\r\nNO FOLHA: (m = 2, pt pai = 48, pt prox = 1284)\r\n\t25, Ronaldo\r\n\t35, Marcela\r\n\t\t\r\nRESULTADO DA BUSCA: 856",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    }
+  ]
+}

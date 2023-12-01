@@ -5,9 +5,12 @@
 
 TNo *cria(int d) {
     TNo *novo = (TNo *) malloc(sizeof(TNo));
+    //m: quantidade de chaves armazenadas no nó
     novo->m = 0;
     novo->pai = NULL;
+    //s: array de chaves
     novo->s = (int *) malloc(sizeof(int *) * (d * 2));
+    //p: pt para array de pt p/ os filhos
     novo->p = (TNo **) malloc(sizeof(TNo *) * (d * 2) + 1);
     for (int i = 0; i < (d * 2 + 1); i++) {
         novo->p[i] = NULL;
